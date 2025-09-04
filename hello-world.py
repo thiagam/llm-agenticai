@@ -15,7 +15,7 @@ messages = [{"role": "user", "content": "Print Hello World in any random non com
 
 
 response = openai.chat.completions.create(
-    model="gpt-5-nano",
+    model="gpt-4o-mini",
     messages=messages
 )
 
