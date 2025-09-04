@@ -6,7 +6,8 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 if openai_api_key:
     print("OpenAI API Key exists ")
 else:
-    print("OpenAI API Key not exists")
+    print("OpenAI API Key does not exists. So exiting")
+    raise SystemExit(0)
 
 
 from openai import OpenAI
