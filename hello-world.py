@@ -12,7 +12,7 @@ else:
 
 from openai import OpenAI
 openai = OpenAI()
-messages = [{"role": "user", "content": "Print Hello World in any random non computer language. Mention the name of the language"}]
+messages = [{"role": "user", "content": "Say Hello World in any random non computer language. Mention the name of the language"}]
 
 
 response = openai.chat.completions.create(
