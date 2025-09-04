@@ -4,7 +4,7 @@ import os
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
 if openai_api_key:
-    print(f"OpenAI API Key exists ")
+    print("OpenAI API Key exists ")
 else:
     print("OpenAI API Key not exists")
 
