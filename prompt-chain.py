@@ -13,6 +13,7 @@ else:
 from openai import OpenAI
 openai = OpenAI()
 
+
 messages = [{"role": "user", "content": "Identify a business area for exploring opportunities for Agentic AI. Please provide only the business idea, no explanation."}]
 
 # Then make the first call:
@@ -40,3 +41,18 @@ response = openai.chat.completions.create(
 pain_point = response.choices[0].message.content
 
 print(pain_point)
+
+evaluator_user_prompt = f"The pain point is: {pain_point}. Please provide an agentic AI business idea that could be used to solve the pain point."
+
+messages = [{"role": "system", "content": evaluator_user_prompt}]
+
+messages.append({"role": "user", "content": evaluator_user_prompt.format(pain_point=pain_point)})
+
+response = openai.chat.completions.create(
+    model="gpt-5-nano",
+    messages=messages
+)
+
+agentic_ai_business_idea = response.choices[0].message.content
+
+print(agentic_ai_business_idea)
